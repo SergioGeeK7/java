@@ -27,11 +27,7 @@ public class Barraherramientas extends JFrame {
         
         
         JMenu m1 = new JMenu ("Metallica");
-        
         m1.add(mu1);
-        
-        
-        
         JMenu m2 = new JMenu ("Iron Maiden");
         m2.add(mu2);
         JMenu m3= new JMenu ("Slayer");

@@ -15,7 +15,10 @@ public class Barra2GUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         
-        JButton j1 = new JButton ("Ejecutar");
+        ImageIcon nn = new ImageIcon ("kratos.gif");
+        
+        
+        JButton j1 = new JButton ("Ejecutar",nn);
         JButton j2 = new JButton ("Parar");
         JButton j3= new JButton ("Salir");
         
