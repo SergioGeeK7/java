@@ -28,6 +28,7 @@ public class AtrapaMouse extends JFrame implements ActionListener {
         System.exit(0);
     }
 
+// http://www.sc.ehu.es/sbweb/fisica/cursoJava/applets/events/grupo1.htm
     
 
     public static void main(String[] arguments) {
