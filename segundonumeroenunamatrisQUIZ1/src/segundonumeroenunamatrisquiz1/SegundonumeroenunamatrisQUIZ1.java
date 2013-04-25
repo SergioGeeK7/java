@@ -28,7 +28,7 @@ public class SegundonumeroenunamatrisQUIZ1 {
       
       
       int f=meta.nextInt();
-       System.out.println("ingrese numero de columnas ");
+      System.out.println("ingrese numero de columnas ");
       int c=meta.nextInt();
       int matriz [][]=new int [f][c];
       

@@ -1,11 +1,17 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package applet_año;
 
-package applet_ano;
+
+
 import java.awt.*;
 import java.awt.event.*;
 import java.applet.*;
 
 
-public class Applet_ano extends Applet implements ActionListener {
+public class Applet_año extends Applet implements ActionListener {
 
     Label title1;
     Label title2;
@@ -21,7 +27,7 @@ public class Applet_ano extends Applet implements ActionListener {
    
     Button btn;
     
-    public Applet_ano (){
+    public Applet_año (){
         
         title1= new Label ("Año");
         title2= new Label ("Dias");
@@ -62,14 +68,14 @@ public class Applet_ano extends Applet implements ActionListener {
     public void actionPerformed (ActionEvent e){
         
         
-        int ano=Integer.parseInt(txt1.getText());
-        int dias=Integer.parseInt(txt2.getText());
+      int ano=Integer.parseInt(txt1.getText());
+      int dias=Integer.parseInt(txt2.getText());
         int mes=0;
         
         int cont=0;
-    
+     
         
-       if (ano%4==0 && ano%100!=1){
+       if (ano%4==0 && ano%100!=0){
             
             cont++;
             
@@ -77,8 +83,14 @@ public class Applet_ano extends Applet implements ActionListener {
             
             cont++;
             
+        } else {
+            
         }
-       
+        
+        
+        
+   
+        
         if (dias<32){
             
             mes=1;
@@ -87,66 +99,60 @@ public class Applet_ano extends Applet implements ActionListener {
         }else if (dias<=cont+59){
             
             mes=2;
-            if(cont==1){
-                cont--;
-            }
-            
-            dias=dias-31-cont;
+            dias=dias-31;
             
             
         }else if (dias<91+cont){
             
             mes=3;
-            dias=dias-59-cont;
+            dias=dias-59;
             
         } else if (dias<121+cont){
             mes=4;
-            dias=dias-90-cont;
+            dias=dias-90;
             
         } else if (dias<152+cont){
             mes=5;
-            dias=dias-120-cont;
+            dias=dias-120;
         } else if (dias<182+cont){
             mes=6;
-            dias=dias-151-cont;
+            dias=dias-151;
         }else if (dias<213+cont){
             mes=7;
-            dias=dias-181-cont;
+            dias=dias-181;
         }else if (dias<244+cont){
             mes=8;
-            dias=dias-212-cont;
+            dias=dias-212;
         }else if (dias<274+cont){
             mes=9;
-            dias=dias-243-cont;
+            dias=dias-243;
         }else if (dias<305+cont){
             mes=10;
-            dias=dias-273-cont;
+            dias=dias-273;
         }else if (dias<335+cont){
             mes=11;
-            dias=dias-304-cont;
-        }else if (dias <367+cont){
+            dias=dias-304;
+        }else if (dias <366+cont){
             mes=12;
-            dias=dias-334-cont;
+            dias=dias-334;
         }else {
             
             
             
         }
         
-        if (dias >31 ){
-            
-            txt5.setText("error");
-            
-            
-        } else {
-            
-            txt5.setText(""+dias);
-            
-        }
         
+     
         txt3.setText(""+ano);
         txt4.setText(""+mes);
+        txt5.setText(""+dias);
+        
+        
+        
         
     }
+    
+    
+    
     
 }
