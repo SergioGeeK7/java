@@ -25,7 +25,7 @@ public class Applet_ano extends Applet implements ActionListener {
         
         title1= new Label ("Año");
         title2= new Label ("Dias");
-        btn=new Button ("   Convercion   ");
+        btn=new Button ("   Traducir   ");
         title3= new Label("Año");
         title4= new Label("Mes");
         title5= new Label("Dias");
