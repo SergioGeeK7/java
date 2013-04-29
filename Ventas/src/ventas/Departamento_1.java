@@ -1,27 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ventas;
 
 import conexion.Conector;
-import conexion.ConexionMySQL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
-/**
- *
- * @author DIAMANTE
- */
 public class Departamento_1 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Departamento_1
-     */
-    public Departamento_1() {
-        super ("Departamento de Ventas 1");
+    
+    
+    private String tabla;
+    private int ccont;
+    
+    public Departamento_1(String titulo,String tabla,int cont) {
+        super (titulo);
         initComponents();
          txtnombre.setEnabled(false);
         txtcc.setEnabled(false);
@@ -29,16 +19,38 @@ public class Departamento_1 extends javax.swing.JFrame {
         txtunidades_vendidas.setEnabled(false);
         tbnguardar.setEnabled(false);
         btnsalir.setEnabled(false);
+        labeltitulo.setText(titulo);
+     
         
+        /*
+        int ccont=0;
+        ccont++;
+        this.ccont=ccont;
+        System.out.println(this.ccont+"EL NUMERO ES"+ccont);
+        */
         
-        
+        // asi se actualiza una variable sin tener que llevarla, en init components
+        this.cont=cont;
+        btnsalir.setText(depa());
+        this.tabla=tabla;
         
         
     }
 
-    
-    
-    
+    public String depa (){
+        
+        if (cont==1){
+            
+            return "Departamento 2"; 
+            
+        }else if (cont==2){
+            
+            return "Departamento 3";
+        }else
+        
+        return "Salir";
+    }
+            
     
     
     /**
@@ -61,7 +73,7 @@ public class Departamento_1 extends javax.swing.JFrame {
         tbnguardar = new javax.swing.JButton();
         btnsalir = new javax.swing.JButton();
         cbmes = new javax.swing.JComboBox();
-        jLabel5 = new javax.swing.JLabel();
+        labeltitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,8 +108,8 @@ public class Departamento_1 extends javax.swing.JFrame {
 
         cbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 0));
-        jLabel5.setText("Departamento 1");
+        labeltitulo.setBackground(new java.awt.Color(255, 255, 0));
+        labeltitulo.setText("Departamento 1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,11 +129,11 @@ public class Departamento_1 extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtnombre, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                             .addComponent(cbmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtcc, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(labeltitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(tbnagregar)
@@ -135,7 +147,7 @@ public class Departamento_1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labeltitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,11 +177,28 @@ public class Departamento_1 extends javax.swing.JFrame {
 
     private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
 
-        
-        
-        Departamento_2 depar2 = new Departamento_2();
-        depar2.setVisible(true);
+      
+        if (cont==1) {
+            
+      //  btnsalir.setText("Departamento 3") ;
+        Departamento_1 dp2 = new Departamento_1 ("Departamento de Ventas 2","departamento_2",2);
+        dp2.setVisible(true);
         this.dispose();
+       
+        }else if (cont==2){
+            
+            
+       // btnsalir.setText("salir")  ;
+        Departamento_1 dp3 = new Departamento_1 ("Departamento de Ventas 3","departamento_3",3);
+        dp3.setVisible(true);
+        this.dispose();
+        }else if (cont==3){ 
+            
+            this.dispose();
+        
+        }
+        
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsalirActionPerformed
 
@@ -196,8 +225,7 @@ public class Departamento_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_tbnagregarActionPerformed
 
     private void tbnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbnguardarActionPerformed
-
-        
+ 
         String  nom, cc, mes, uv ;
         nom=txtnombre.getText();
         cc=txtcc.getText();
@@ -207,11 +235,7 @@ public class Departamento_1 extends javax.swing.JFrame {
         
      //  ingresar("departamento_1");
         
-        Conector cn = new Conector ("departamento_1",nom,cc,mes,uv);
-        
-        
-        
-        
+        Conector cn = new Conector (tabla,nom,cc,mes,uv);
         
         
     }//GEN-LAST:event_tbnguardarActionPerformed
@@ -246,10 +270,12 @@ public class Departamento_1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Departamento_1().setVisible(true);
+               new Departamento_1("Departamento de Ventas 1","departamento_1",1).setVisible(true);
             }
         });
     }
+    
+    private int cont;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnsalir;
     private javax.swing.JComboBox cbmes;
@@ -257,7 +283,7 @@ public class Departamento_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel labeltitulo;
     private javax.swing.JButton tbnagregar;
     private javax.swing.JButton tbnguardar;
     private javax.swing.JTextField txtcc;
