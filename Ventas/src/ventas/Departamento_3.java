@@ -167,7 +167,8 @@ public class Departamento_3 extends javax.swing.JFrame {
         cbmes.setSelectedIndex(0);
         txtunidades_vendidas.setText("");
         tbnguardar.setEnabled(true);
-        
+        btnsalir.setEnabled(true);
+        txtnombre.requestFocus();
         
         
         

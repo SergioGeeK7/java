@@ -18,7 +18,7 @@ public class Departamento_2 extends javax.swing.JFrame {
     public Departamento_2() {
         super ("Departamento de Ventas 2");
         initComponents();
-         txtnombre.setEnabled(false);
+        txtnombre.setEnabled(false);
         txtcc.setEnabled(false);
         cbmes.setEnabled(false);
         txtunidades_vendidas.setEnabled(false);
@@ -171,7 +171,8 @@ public class Departamento_2 extends javax.swing.JFrame {
         cbmes.setSelectedIndex(0);
         txtunidades_vendidas.setText("");
         tbnguardar.setEnabled(true);
-        
+        btnsalir.setEnabled(true);
+        txtnombre.requestFocus();
         
         
         

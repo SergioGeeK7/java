@@ -37,62 +37,6 @@ public class Departamento_1 extends javax.swing.JFrame {
     }
 
     
-     public void ingresar (String tabla,String nom,String cc,String mes,String uv){
-         
-         
-         
-         
-      
-        
-           
-ConexionMySQL mysql=new  ConexionMySQL();//se llama la clase conexión
-Connection cn=mysql.Conectar();  //creamos un objeto para conectar la base de datos sql
-
-//ahora creamos las variables  para capturar los valores de los cuadros de texto
-//String tabla="Departamento_1";
-
-String sSQL="";
-String mensaje="";
-
-sSQL="INSERT INTO "+tabla+"(nombre, cc, mes, unidades_vendidas)"+
-"VALUES(?, ?, ?, ?)";
-mensaje="los valores se han insertado correctamente";
-
-//ahora vamos a utilizar una interface con un procedimiento para insertar los datos en la base de datos.
-
-try
-{
-PreparedStatement pst=cn.prepareStatement(sSQL);
-pst.setString(1,nom);
-pst.setString(2,cc);
-pst.setString(3,mes);
-pst.setString(4,uv);
-
-//ahora este código es para  ver cuántos elementos se insertaron
-
-int  n=pst.executeUpdate();
-if (n>0){
-JOptionPane.showMessageDialog(null, mensaje);
-}
-}
-
-catch (SQLException ex)
-{
-JOptionPane.showMessageDialog(null, ex);
-}
-
-         
-         
-         
-        
-         
-         
-         
-         
-            
-            
-        }
-    
     
     
     
@@ -243,8 +187,10 @@ JOptionPane.showMessageDialog(null, ex);
         cbmes.setSelectedIndex(0);
         txtunidades_vendidas.setText("");
         tbnguardar.setEnabled(true);
+        btnsalir.setEnabled(true);
         
-        
+        txtnombre.requestFocus();
+                
         
         // TODO add your handling code here:
     }//GEN-LAST:event_tbnagregarActionPerformed
