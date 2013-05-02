@@ -48,11 +48,11 @@ setVisible(true);
 public void FocusGained(FocusEvent  event){
 try{
 //convertimos valores campos de String a numeros y los sumamos
-float total=float.ParseFloat(valor1.getText())+float.ParseFloat(valor2.getText());
+float total=Float.parseFloat(valor1.getText())+Float.parseFloat(valor2.getText());
 
 //añadimos el resultado al campo resultado
-Resultado.setText(" " +total);
-} catch(numberformatexception nfe){
+resultado.setText(" " +total);
+} catch(NumberFormatException nfe){
 //añadimos excepcion si  los valores de texto no pueden convertirse a números, cuando gane el focus los convierte a número y los coloca en el campo resultado sino coloque cero
 
 valor1.setText("0");
@@ -72,4 +72,9 @@ focusGained(event);
 public static void main(String[] args){
 sumar  rest=new  sumar();  //creamos el objeto de la clase
 }
+
+    @Override
+    public void focusGained(FocusEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 } 
