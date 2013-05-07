@@ -6,7 +6,7 @@ package test;
 
 /**
  *
- * @author MCARDONF
+ * @author sergio
  */
 public class Test {
 
