@@ -25,5 +25,7 @@ public class Ejecuta {
 			s = meta.nextInt();
                         System.out.println(s);
 			metodo(s);
+                        
+                        
 		}
 }
