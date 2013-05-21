@@ -18,7 +18,7 @@ public class GUI_Hojadevida extends JFrame{
         
         //diseñador
         
-        FlowLayout diseño=new FlowLayout();
+        GridBagLayout diseño=new GridBagLayout();
         
         //declaracion de objetos y llamar metodos
         
