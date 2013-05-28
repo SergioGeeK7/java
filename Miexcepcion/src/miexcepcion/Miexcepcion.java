@@ -13,13 +13,13 @@ public class Miexcepcion extends Throwable {
     }
     
     
-    public String Miexcepcion (int e){
+    public Miexcepcion (int e){
         
-      /*  
+     
         if (e<0){
             
             System.out.println("tu numero es negativo  ?");
-            return "tu numero es negativo";
+         
         } else if(e>10 && e<21){
             System.out.println("Es un numero del 1 al  10 no al 20");
             
@@ -41,10 +41,10 @@ public class Miexcepcion extends Throwable {
             
         }
         
-        */
+      
         
         
-        return "tu numero es negativo".toString();
+     
         
      }
     

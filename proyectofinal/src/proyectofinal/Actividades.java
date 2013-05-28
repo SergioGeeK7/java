@@ -66,30 +66,64 @@ public class Actividades extends javax.swing.JFrame {
         btneliminar = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
         btncerrar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Actividades");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(136, 11, 189, 33);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Codigo Actividad: ");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(30, 73, 123, 21);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Codigo Alumno: ");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(47, 106, 106, 21);
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre  Actividad:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(20, 139, 133, 21);
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Horario:");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(96, 166, 57, 21);
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Duraciòn: ");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(84, 199, 69, 21);
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Observacion: ");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(60, 232, 93, 21);
+        getContentPane().add(txtcodactividad);
+        txtcodactividad.setBounds(157, 75, 149, 20);
+        getContentPane().add(txtcodalumno);
+        txtcodalumno.setBounds(157, 108, 149, 20);
+        getContentPane().add(txtnombreactividad);
+        txtnombreactividad.setBounds(157, 141, 149, 20);
+        getContentPane().add(txthorario);
+        txthorario.setBounds(157, 168, 149, 20);
+        getContentPane().add(txtduracion);
+        txtduracion.setBounds(157, 201, 149, 20);
+        getContentPane().add(txtobservacion);
+        txtobservacion.setBounds(157, 232, 149, 20);
 
         btnagregar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnagregar.setText("AGREGAR");
@@ -98,6 +132,8 @@ public class Actividades extends javax.swing.JFrame {
                 btnagregarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnagregar);
+        btnagregar.setBounds(29, 281, 89, 23);
 
         btnguardar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnguardar.setText("GUARDAR");
@@ -106,6 +142,8 @@ public class Actividades extends javax.swing.JFrame {
                 btnguardarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnguardar);
+        btnguardar.setBounds(157, 281, 91, 23);
 
         btneliminar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btneliminar.setText("ELIMINAR");
@@ -114,6 +152,8 @@ public class Actividades extends javax.swing.JFrame {
                 btneliminarActionPerformed(evt);
             }
         });
+        getContentPane().add(btneliminar);
+        btneliminar.setBounds(274, 281, 91, 23);
 
         btncancelar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btncancelar.setText("CANCELAR");
@@ -122,6 +162,8 @@ public class Actividades extends javax.swing.JFrame {
                 btncancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(btncancelar);
+        btncancelar.setBounds(91, 315, 97, 23);
 
         btncerrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btncerrar.setText("CERRAR");
@@ -130,93 +172,24 @@ public class Actividades extends javax.swing.JFrame {
                 btncerrarActionPerformed(evt);
             }
         });
+        getContentPane().add(btncerrar);
+        btncerrar.setBounds(254, 315, 81, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(btnagregar)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtduracion, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                            .addComponent(txthorario)
-                            .addComponent(txtnombreactividad)
-                            .addComponent(txtcodalumno)
-                            .addComponent(txtcodactividad)
-                            .addComponent(txtobservacion))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnguardar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(btneliminar)
-                        .addGap(56, 56, 56))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(btncancelar)
-                .addGap(66, 66, 66)
-                .addComponent(btncerrar)
-                .addContainerGap())
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtcodactividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtcodalumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtnombreactividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txthorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtduracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtobservacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnagregar)
-                    .addComponent(btnguardar)
-                    .addComponent(btneliminar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btncancelar)
-                    .addComponent(btncerrar))
-                .addContainerGap(29, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 360, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 400, 360);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -274,7 +247,7 @@ public class Actividades extends javax.swing.JFrame {
 
        int codactividad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo  de la actividad  a buscar")); 
 
-       String mts ="DELETE FROM actividades WHERE codigo = "+codactividad;
+       String mts ="DELETE FROM actividades WHERE codactividad = "+codactividad;
           
     try 
     {
@@ -389,6 +362,7 @@ JOptionPane.showMessageDialog(null, ex);
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtcodactividad;
     private javax.swing.JTextField txtcodalumno;
     private javax.swing.JTextField txtduracion;

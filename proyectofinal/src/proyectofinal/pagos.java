@@ -64,8 +64,10 @@ public class pagos extends javax.swing.JFrame {
         txtdescripcion = new javax.swing.JTextField();
         txtvalor = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         btnagregar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnagregar.setText("AGREGAR");
@@ -74,6 +76,8 @@ public class pagos extends javax.swing.JFrame {
                 btnagregarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnagregar);
+        btnagregar.setBounds(33, 266, 89, 23);
 
         btnguardar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnguardar.setText("GUARDAR");
@@ -82,6 +86,8 @@ public class pagos extends javax.swing.JFrame {
                 btnguardarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnguardar);
+        btnguardar.setBounds(161, 266, 91, 23);
 
         btneliminar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btneliminar.setText("ELIMINAR");
@@ -90,6 +96,8 @@ public class pagos extends javax.swing.JFrame {
                 btneliminarActionPerformed(evt);
             }
         });
+        getContentPane().add(btneliminar);
+        btneliminar.setBounds(278, 266, 91, 23);
 
         btncancelar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btncancelar.setText("CANCELAR");
@@ -98,6 +106,8 @@ public class pagos extends javax.swing.JFrame {
                 btncancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(btncancelar);
+        btncancelar.setBounds(95, 300, 97, 23);
 
         btncerrar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btncerrar.setText("CERRAR");
@@ -106,108 +116,73 @@ public class pagos extends javax.swing.JFrame {
                 btncerrarActionPerformed(evt);
             }
         });
+        getContentPane().add(btncerrar);
+        btncerrar.setBounds(242, 300, 81, 23);
 
         jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 0, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Pagos");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(152, 12, 79, 33);
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Codigo Pagos:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(51, 63, 90, 21);
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Codigo Alumno:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(41, 96, 100, 21);
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha Pago:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(60, 136, 81, 21);
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Descripciòn: ");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(54, 176, 87, 21);
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Valor:");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(100, 216, 41, 21);
+        getContentPane().add(txtcodpagos);
+        txtcodpagos.setBounds(152, 65, 125, 20);
+        getContentPane().add(txtcodalumno);
+        txtcodalumno.setBounds(152, 98, 125, 20);
+        getContentPane().add(txtfechapago);
+        txtfechapago.setBounds(152, 138, 125, 20);
+        getContentPane().add(txtdescripcion);
+        txtdescripcion.setBounds(152, 178, 125, 20);
+        getContentPane().add(txtvalor);
+        txtvalor.setBounds(152, 218, 125, 20);
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(10, 12, 0, 0);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnagregar)
-                                .addGap(39, 39, 39)
-                                .addComponent(btnguardar)
-                                .addGap(26, 26, 26)
-                                .addComponent(btneliminar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(62, 62, 62)
-                                .addComponent(btncancelar)
-                                .addGap(50, 50, 50)
-                                .addComponent(btncerrar))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel7)))
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtdescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                                .addComponent(txtfechapago)
-                                .addComponent(txtcodalumno)
-                                .addComponent(txtcodpagos)
-                                .addComponent(txtvalor)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 390, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtcodpagos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtcodalumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtfechapago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtvalor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnagregar)
-                    .addComponent(btnguardar)
-                    .addComponent(btneliminar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btncancelar)
-                    .addComponent(btncerrar))
-                .addGap(31, 31, 31))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 360, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 390, 360);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -311,7 +286,7 @@ ConexionMySQL mysql=new  ConexionMySQL();//se llama la clase conexión
 
        int codpagos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo  del pago  a buscar")); 
 
-       String mts ="DELETE FROM pagos WHERE codigo = "+codpagos;
+       String mts ="DELETE FROM pagos WHERE codpagos = "+codpagos;
           
     try 
     {
@@ -375,6 +350,7 @@ ConexionMySQL mysql=new  ConexionMySQL();//se llama la clase conexión
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtcodalumno;
     private javax.swing.JTextField txtcodpagos;
     private javax.swing.JTextField txtdescripcion;

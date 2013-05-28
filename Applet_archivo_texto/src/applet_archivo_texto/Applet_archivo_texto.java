@@ -36,7 +36,7 @@ public class Applet_archivo_texto {
        		System.out.print("Da el saldo de la cuenta " + (i+1)+ " : ");
        		saldo = Double.parseDouble(in.readLine());
        		// se crea el objeto de la clase Cuenta como elemento del arreglo
-       		arreglo [i] = new Cuenta(numero, nombre, saldo);
+       		arreglo [i] = new Cuenta(nombre, numero, saldo);
         }				
 	}
 	

@@ -32,7 +32,7 @@ public class Empleados extends javax.swing.JFrame {
         // cuando cargue el formualario me cargue automaticamente los datos
         //llamamos el metodo
         
-    //    cargartablaempleados("");
+       cargartablaempleados("");
         
         
         
@@ -151,6 +151,120 @@ public class Empleados extends javax.swing.JFrame {
     
     
     
+    String id_actualizar = "";
+     void buscaryeditar (String valor){  // resivira valor para poder filtrar los datos
+        
+       
+        String apellido1="",apellido2="",nom1="",nom2="",fn="",genero="";
+        
+        ConexionMySQL mysql = new ConexionMySQL();
+        
+        // objeto tipo coneccion
+        
+        Connection cn = mysql.Conectar();
+        
+        // crear la consulta Mysql
+        
+        
+        
+        
+        
+        
+        String sSQL="";
+        
+        
+        sSQL = "SELECT id_emp,apellido1,apellido2,nombre1,nombre2,fecha_nac,genero FROM datos_personales "
+                + "WHERE id_emp='"+valor+"' ";
+        
+        // SELECT PONER TODOS LOS CAMPOS DE LA TABLA
+        //WHERE CONCAT == CONCATENAREMOS PARA QUE SE PUEDA BUSCAR POR CUALQUIERA DE ESTOS ELEMENTOS,
+        // YA SEA POR APELLIDO1 APELLIDO2 NOMBRE1 
+        // LIKE(LENGUAJE MYSQL) == QUE TODO ESTO SE PARESCA A LO QUE ESTE EN LA VARIABLE "VALOR" 
+        // COMODINES %
+        // variable es la variable que recivimos en este metodo
+        try {
+            // crear un estamento 
+            // reportar excepcion
+            
+            Statement st =cn.createStatement();
+            
+            
+            // vamos a almacenar los datos en un objeto resultset
+            // un objeto tipo Resultset llamado rs y le mandamos el stament st.executeQuery , donde le mandamos el sSQL de arriba
+            ResultSet rs = st.executeQuery(sSQL);
+            
+            // en este objeto rs obtenemos todos los datos, ahora lo recorremos para poder 
+            // rescatar los valores del objeto
+            // resulset tiene un objeto que es una matriz y debemos recorrerla
+            
+            
+            while(rs.next()){
+                
+                
+                // utilizaremos la variable que tiene varias posiciones y guardaremos cada uno de los valores en ese vector
+                
+                
+                apellido1= rs.getString("apellido1");
+                apellido2= rs.getString("apellido2");
+                nom1= rs.getString("nombre1");
+                nom2= rs.getString("nombre2");
+                fn= rs.getString("fecha_nac");
+                genero= rs.getString("genero");
+                id_actualizar =valor;
+                
+                // almacenar esto en el modelo
+                
+              
+                
+            }
+            
+            
+            
+            
+            txtprimerapellido.setText(apellido1);
+            txtsegundoapellido.setText(apellido2);
+            txtprimernombre.setText(nom1);
+            txtsegundonombre.setText(nom2);
+            txtfechadenac.setText(fn);
+            cbogenero.setSelectedIndex(1);
+            
+            
+       
+            
+            
+            
+            
+        } catch (SQLException ex) {
+           
+                JOptionPane.showMessageDialog(null, ex);  
+                
+                
+                
+            // Logger.getLogger(Empleados.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+  
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // habilitar todos los controles . para agregar datos
     
     void habilitar (){
@@ -163,11 +277,11 @@ public class Empleados extends javax.swing.JFrame {
         txtsegundonombre.setEnabled(true);
         txtfechadenac.setEnabled(true);
         cbogenero.setEnabled(true);
-        txtprimerapellido.setText("");
+       /* txtprimerapellido.setText("");
         txtsegundoapellido.setText("");
         txtprimernombre.setText("");
         txtsegundonombre.setText("");
-        txtfechadenac.setText("");
+        txtfechadenac.setText("");*/
         btnguardar.setEnabled(true);
         btncancelar.setEnabled(true);
         
@@ -215,6 +329,8 @@ public class Empleados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        menueditar = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtprimerapellido = new javax.swing.JTextField();
@@ -236,8 +352,16 @@ public class Empleados extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbnconsultaempleados = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtbuscar = new javax.swing.JTextField();
         tbnbuscar = new javax.swing.JButton();
+
+        menueditar.setText("Modificar");
+        menueditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menueditarActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(menueditar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -398,11 +522,17 @@ public class Empleados extends javax.swing.JFrame {
 
             }
         ));
+        tbnconsultaempleados.setComponentPopupMenu(jPopupMenu1);
         jScrollPane1.setViewportView(tbnconsultaempleados);
 
         jLabel7.setText("Buscar");
 
         tbnbuscar.setText("Buscar");
+        tbnbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbnbuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -413,10 +543,10 @@ public class Empleados extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(jLabel7)
                 .addGap(50, 50, 50)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tbnbuscar)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,7 +554,7 @@ public class Empleados extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbnbuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -439,13 +569,13 @@ public class Empleados extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -471,7 +601,7 @@ public class Empleados extends javax.swing.JFrame {
 
         
         habilitar();  //llamamos al metodo a accion
-        
+        accion ="Insertar";
         // TODO add your handling code here:
     }//GEN-LAST:event_btnnuevoActionPerformed
 
@@ -530,11 +660,33 @@ public class Empleados extends javax.swing.JFrame {
         fn=txtfechadenac.getText();
         gen= cbogenero.getSelectedItem().toString();   // to string para convertir el objeto a string.
         
-        sSQL= "INSERT INTO datos_personales(apellido1,apellido2,nombre1,nombre2,fecha_nac,genero)"  //poner campos que tenemos que insetar (menos el campo id mp que se 
+      
+      if(accion.equals("Insertar"))  {
+          
+            sSQL= "INSERT INTO datos_personales(apellido1,apellido2,nombre1,nombre2,fecha_nac,genero)"  //poner campos que tenemos que insetar (menos el campo id mp que se 
 
                 + "VALUES(?,?,?,?,?,?) ";     // + values que son igual al numero de icognitas al numero de campos a llevar
         
         mensaje="Los datos se han insertado de manera sactisfactoria";
+          
+          
+          
+      }else if (accion.equals("Modificar")){
+          
+            sSQL= "UPDATE datos_personales SET apellido1=?,apellido2=?,nombre1=?,nombre2=?,fecha_nac=?,genero=? WHERE id_emp="+id_actualizar+"VALUES(?,?,?,?,?,?) " ; //poner campos que tenemos que insetar (menos el campo id mp que se 
+   
+            
+            // + values que son igual al numero de icognitas al numero de campos a llevar
+        
+        mensaje="los datos se han modificado correctamente";
+          
+          
+      }
+        
+        
+        
+        
+        
         
         // procedemos a insertar estos datos a la base de datos
         // utilizaremos una interface 
@@ -591,6 +743,76 @@ public class Empleados extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnguardarActionPerformed
 
+    private void tbnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbnbuscarActionPerformed
+
+        
+        // capturar el valor que se digito
+        
+        String valor = txtbuscar.getText();
+        
+        // llamar el metodo y filtrar por lo que tenga la variable valor
+        
+        cargartablaempleados(valor);
+        
+        
+        
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbnbuscarActionPerformed
+
+    private void menueditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menueditarActionPerformed
+
+        
+        // capturar cual fue la fila que se selecciono
+        
+        int filaselected;
+        String id;
+        
+        
+        try{
+            // capturar la fila seleccionada
+            filaselected=tbnconsultaempleados.getSelectedRow();
+            
+            // preguntar si la fila esta realmente seleccionada
+            
+            if(filaselected==-1){
+                
+                JOptionPane.showMessageDialog(null,"porfavor selecccione alguna fila");
+                
+                
+            }else{
+                
+                accion="Modificar";
+                
+                // obtener los datos de la tabla
+                // haremos un cast una convercion ()
+                modelo=(DefaultTableModel)tbnconsultaempleados.getModel();
+                
+                // seleccionar solo la id 
+                
+                id=(String)modelo.getValueAt(filaselected, 0);
+                
+                // 0 es la primera columna de la filaseleted 
+                        
+                        buscaryeditar(id);
+                habilitar();
+            }
+            
+            
+        }catch(Exception ex){
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menueditarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -640,10 +862,12 @@ public class Empleados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JMenuItem menueditar;
     private javax.swing.JButton tbnbuscar;
     private javax.swing.JTable tbnconsultaempleados;
+    private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtfechadenac;
     private javax.swing.JTextField txtprimerapellido;
     private javax.swing.JTextField txtprimernombre;

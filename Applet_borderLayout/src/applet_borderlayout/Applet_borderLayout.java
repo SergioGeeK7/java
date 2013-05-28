@@ -17,10 +17,10 @@ public class Applet_borderLayout extends Applet {
       b1 = new Button("b1");
       b2 = new Button("b2");
       b3 = new Button("b3");
-      add(t1, BorderLayout.NORTH);
+      add(t1, BorderLayout.NORTH);//
       add(t2, BorderLayout.EAST);
       add(b1, BorderLayout.WEST);
-      add(b2, BorderLayout.SOUTH);
+      add(b2, BorderLayout.SOUTH);//
       add(b3, BorderLayout.CENTER);
    }
 
