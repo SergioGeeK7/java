@@ -852,7 +852,7 @@ public class Estudiantes extends javax.swing.JFrame {
         
      
         
-         String exclu = (String)(JOptionPane.showInputDialog("Ingrese Columna Unica")); 
+         String exclu =JOptionPane.showInputDialog("Ingrese Columna Unica"); 
          excluir(exclu);
          
        /* 
