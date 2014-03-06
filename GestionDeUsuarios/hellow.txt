@@ -1,0 +1,5 @@
+1|sergio|arboleda|4000|20|0|casado|
+1|carlos|alberto|2000|21|1|comprometido|
+1|leydi|cardona|1100|22|0|soltero|
+1|rihanna|pacha|7000|26|0|casado|
+1|rabbit|rescue|4000|24|0|soltero|
