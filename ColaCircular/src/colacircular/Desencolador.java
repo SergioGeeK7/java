@@ -1,0 +1,41 @@
+package colacircular;
+
+import java.io.IOException;
+import java.nio.CharBuffer;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Desencolador implements Runnable{
+
+    
+    private ColaCircular cola;
+
+    public Desencolador(ColaCircular cola) {
+        this.cola = cola;
+    }
+
+    @Override
+    public void run() {
+     
+        
+        
+     Random rd = new Random();
+     int time = rd.nextInt(2000);
+        try {
+            while (true) {
+                Thread.sleep(time);
+                System.out.println(cola.desencolar());
+            }
+            
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Desencolador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+    }
+    
+    
+    
+}

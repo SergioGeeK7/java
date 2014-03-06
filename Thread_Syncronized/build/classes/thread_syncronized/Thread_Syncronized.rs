@@ -1,0 +1,4 @@
+thread_syncronized.Thread_Syncronized
+thread_syncronized.Contador
+thread_syncronized.Suma
+thread_syncronized.Resta
