@@ -21,7 +21,6 @@ public class Delimitador {
         }
         
         
-        System.out.print(token.nextToken()+" ");
         
     }
 }
