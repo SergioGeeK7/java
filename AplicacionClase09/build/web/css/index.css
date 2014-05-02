@@ -1,0 +1,51 @@
+body {
+	background: url(../imagenes/fondo5.jpg);
+	color: #028;
+	font-family: Calibri, Arial, sans-serif;
+	font-size: 100%;
+}
+
+#cabecera {
+    display: -moz-box;
+    display: -o-box;
+    display: -webkit-box;
+    display: box;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    width: 100%;	
+    padding: 20px 0;
+}
+
+#logo {
+    margin: .5em;
+    -webkit-border-radius: 10px ;
+    border-radius: 10px;
+}
+
+#informativo{
+        margin: 2em 60em 2em 2em;
+        padding: 1em;
+	-moz-box-shadow: 10px 15px 10px 0px #888;
+        -webkit-box-shadow: 10px 15px 10px 0px #888;
+        box-shadow: 10px 15px 10px 0px #888;
+	-webkit-border-radius: 10px 120px 100px 10px;
+        border-radius: 10px 120px 100px 10px;
+	background: hsla(240,55%,70%,.5);
+}
+
+input[type=text] {
+	padding: .2em;
+	border: 2px outset #fC3;
+}
+
+input[type=submit] {
+	padding: .1em .2em;
+	border: 1px solid hsla(0,0%,0%,.3);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(230,87,153,1)), color-stop(100%,rgba(225,285,32,0.4))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left, rgba(230,87,153,1) 0%,rgba(225,285,32,0.4) 100%); /* Chrome10+,Safari5.1+ */
+}

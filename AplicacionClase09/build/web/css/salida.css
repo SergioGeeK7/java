@@ -1,0 +1,25 @@
+body {
+    background: url(../imagenes/fondo2.jpg);
+    font-family: Arial, sans-serif;
+    font-size: 100%;
+}
+
+h2 {
+    color: #0033cc;
+    font-size: 150%;
+    text-shadow: -4px -4px 5 hsla(0,30%,100%,.6);
+    letter-spacing: -1px;
+}
+
+p {
+
+    color: #443366;
+    text-shadow: -5px -8px 3 hsla(120,60%,70%,.8);
+    font-size: 120%;
+}
+h3 {
+
+    color: #ff0033;
+    font-family: cursive;
+    text-shadow:-1px -2px 3px #0A8;
+}
